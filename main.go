@@ -12,7 +12,6 @@ import (
 	"github.com/bot-api/telegram"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 
 	"github.com/gozaddy/findtreasure/types"
 )
@@ -27,10 +26,10 @@ var (
 )
 
 func init() {
-	err := godotenv.Load(".env")
+	/*err := godotenv.Load()
 	if err != nil {
 		log.Fatalln("error loading .env file", err)
-	}
+	}*/
 	telegramAPI = telegram.New(os.Getenv("TELEGRAM_TOKEN"))
 	/*err = telegramAPI.SetWebhook(context.Background(), telegram.NewWebhook(os.Getenv("WEBHOOK_URL")))
 	if err != nil {
