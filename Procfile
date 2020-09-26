@@ -1,1 +1,1 @@
-web:bin/build.exe
+web:bin/findtreasure
