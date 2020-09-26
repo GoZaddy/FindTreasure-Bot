@@ -92,7 +92,7 @@ func main() {
 				if err != nil {
 					log.Println(err)
 				}
-				//wc.Stop()
+				wc.Stop()
 			default:
 				msg := telegram.NewMessage(chatID, "Hello, please send a recognised commmand /run or /stop")
 				_, err := telegramAPI.SendMessage(context.Background(), msg)
