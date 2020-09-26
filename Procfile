@@ -1,1 +1,1 @@
-web:bin/findtreasure
+web: bin/findtreasure
