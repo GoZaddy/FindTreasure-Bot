@@ -229,7 +229,7 @@ func (j *job) Run() (*types.NodeResponse, error) {
 		return nil, err
 	}
 
-	req, err := http.NewRequest("GET", "https://findtreasure.app/api/v1/games/test-v2/"+newPath, nil)
+	req, err := http.NewRequest("GET", os.Getenv("BASE_URL")+newPath, nil)
 	if err != nil {
 		return nil, err
 	}

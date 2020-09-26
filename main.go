@@ -42,6 +42,10 @@ func main() {
 
 	r := gin.Default()
 
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{"message": "Hello!"})
+	})
+
 	r.POST("/", func(c *gin.Context) {
 		var req types.TelegramResponse
 
@@ -109,7 +113,7 @@ func start() (*types.NodeResponse, error) {
 	fmt.Println("starting...")
 	client := http.DefaultClient
 
-	req, err := http.NewRequest("GET", "https://findtreasure.app/api/v1/games/test-v2/start", nil)
+	req, err := http.NewRequest("GET", os.Getenv("BASE_URL")+"start", nil)
 	if err != nil {
 		return nil, err
 	}
